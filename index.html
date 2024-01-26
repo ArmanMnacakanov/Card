@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div class="Cards_Box">
+        <div class="Card" id="Card">
+            <div class="Front" id="Front">
+                <div>
+                    <span>Тариф</span>
+                    <h2>Стандарт</h2>
+                </div>
+                <div>
+                    <a href="#">Подробнее</a>
+                </div>
+            </div>
+            <div class="Back_Box" id="Back">
+                <div class="Card_Img">
+                    <img src="./img/4.png" alt="">
+                </div>
+                <div class="Card_Info">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <img src="./img/1.jpg" alt="">
+                                </div>
+                                <div>
+                                    <h3>Старт в професии</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <img src="./img/2.avif" alt="">
+                                </div>
+                                <div>
+                                    <h3>Карьерный трек</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <img src="./img/3.png" alt="">
+                                </div>
+                                <div>
+                                    <h3>junior web-developer</h3>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div>
+                                    <img src="./img/4.png" alt="">
+                                </div>
+                                <div>
+                                    <h3>Fullstack developer</h3>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const Card = document.getElementById('Card');
+        const Front = document.getElementById('Front');
+        const Back = document.getElementById('Back');
+        var count = 0;
+        Card.onclick = () => {
+            if (count % 2 == 0) {
+                Card.style.transform = 'rotateY(0deg)';
+                Card.style.height = '800px'
+                setTimeout(() => {
+                    Front.style.opacity = '0'
+                }, 200);
+                Back.style.display = 'block'
+                Back.style.display = 'flex'
+                Back.style.justifyContent = 'center'
+                Back.style.alignContent = 'center'
+            } else {
+                Card.style.transform = 'rotateY(180deg)';
+                Card.style.height = '300px'
+                setTimeout(() => {
+                    Front.style.opacity = '1'
+                }, 300);
+                setTimeout(() => {
+                    Back.style.display = 'none'
+                }, 200);
+            }
+            count++
+        }
+    </script>
+</body>
+
+</html>
